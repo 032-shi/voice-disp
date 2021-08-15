@@ -59,5 +59,5 @@ def cut_wav(filename,time):
 print("input filename = ")
 f_name = "sample" #対象ファイル名を指定
 print("cut time = ")
-cut_time = input() #分割する長さは、実行時に指定する
+cut_time = input() #分割する長さは、実行時に指定する 単位は[sec]
 cut_wav(f_name,float(cut_time))
