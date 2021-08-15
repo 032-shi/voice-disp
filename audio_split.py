@@ -15,7 +15,7 @@ if file == False:
   os.mkdir("output")
 
 #filenameに読み込むファイル、timeにカットする間隔
-def cut_wav(filename,time):  
+def cut_wav(filename,time):
   # timeの単位は[sec]
 
   # ファイルを読み出し
@@ -27,7 +27,7 @@ def cut_wav(filename,time):
   width = wr.getsampwidth()
   fr = wr.getframerate()
   fn = wr.getnframes()
-  total_time = 1.0 * fn / fr 
+  total_time = 1.0 * fn / fr
   integer = math.floor(total_time*100) # 小数点以下切り捨て
   t = int(time*100)  # 秒数[sec]
   frames = int(ch * fr * t /100)
@@ -40,7 +40,7 @@ def cut_wav(filename,time):
   for i in range(num_cut):
     print(i)
     # 出力データを生成
-    outf = 'output/' + str(i) + '.wav' 
+    outf = 'output/' + str(i) + '.wav'
     start_cut = int(i*frames)
     end_cut = int(i*frames + frames)
     print(start_cut)
@@ -59,5 +59,5 @@ def cut_wav(filename,time):
 print("input filename = ")
 f_name = "sample" #対象ファイル名を指定
 print("cut time = ")
-cut_time = input()
+cut_time = input() #分割する長さは、実行時に指定する
 cut_wav(f_name,float(cut_time))
